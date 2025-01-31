@@ -230,6 +230,93 @@ def main():
         variable12= "Tiempo Disponible en el Dia"
         st.header(variable12)
         gb(df_consolidado_Comp, variable12)        
+
+
+
+        #Dataset de 7ma Generacion Leads
+    title5= "Analisis Univariado de 7ma Gneracion Leads"
+    st.markdown(f"## {title5}")
+    
+    col13, col14, col15 = st.columns(3) #defino los alias de 3 columnas y le paso como argumento la cantidad (3)
+    
+    with col13:
+
+        variable13= "M_Pais"
+        st.header(variable13)
+        gb(df_consolidado_7l, variable13)
+
+    with col14:
+        variable14= "Estudios"
+        st.header(variable14)
+        gb(df_consolidado_7l, variable14)    
+
+    with col15:
+        variable15= "Situacion Laboral M"
+        st.header(variable15)
+        gb(df_consolidado_7l, variable15)        
+
+
+    col16, col17, col18 = st.columns(3) #defino otra fila de 3 columnas
+    
+    with col16:
+
+        variable16= "Conocimiento Importaciones"
+        st.header(variable16)
+        gb(df_consolidado_7l, variable16)
+
+    with col17:
+        variable17= "¿Cómo conociste a Valeria o a Emprendelandia?"
+        st.header(variable17)
+        gb(df_consolidado_7l, variable17)    
+
+    with col18:
+        variable18= "Tiempo Disponible en el Dia"
+        st.header(variable18)
+        gb(df_consolidado_7l, variable18)            
+
+
+
+
+        #Dataset de 7ma Generacion Compradores
+    title6= "Analisis Univariado de 7ma Gneracion Compradores"
+    st.markdown(f"## {title6}")
+    
+    col19, col20, col21 = st.columns(3) #defino los alias de 3 columnas y le paso como argumento la cantidad (3)
+    
+    with col19:
+
+        variable19= "M_Pais"
+        st.header(variable19)
+        gb(df_consolidado_7l, variable19)
+
+    with col20:
+        variable20= "Estudios"
+        st.header(variable20)
+        gb(df_consolidado_7l, variable20)    
+
+    with col21:
+        variable21= "Situacion Laboral M"
+        st.header(variable21)
+        gb(df_consolidado_7l, variable21)        
+
+
+    col22, col23, col24 = st.columns(3) #defino otra fila de 3 columnas
+    
+    with col22:
+
+        variable22= "Conocimiento Importaciones"
+        st.header(variable22)
+        gb(df_consolidado_7l, variable22)
+
+    with col23:
+        variable23= "¿Cómo conociste a Valeria o a Emprendelandia?"
+        st.header(variable23)
+        gb(df_consolidado_7l, variable23)    
+
+    with col24:
+        variable24= "Tiempo Disponible en el Dia"
+        st.header(variable24)
+        gb(df_consolidado_7l, variable24)            
     #--------------------------------------------------------------------
 
 if __name__=="__main__":

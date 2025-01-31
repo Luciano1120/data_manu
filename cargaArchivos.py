@@ -4,6 +4,7 @@ import streamlit as st
 
 
 #archivos de googleDrive
+#el decorador solo se puede usar para funciones, metodos o Clases- y la caché se reinicia toda vez q vuelvo a correr el servidor de streamlit
 @st.cache_data
 def carga_url_gDrive(ruta,sheet):
 
@@ -15,7 +16,6 @@ def carga_url_gDrive(ruta,sheet):
 
 
 #cargo archivos de OneDrive
-#el decorador solo se puede usar para funciones, metodos o Clases
 @st.cache_data
 def carga_url_oDrive(ruta,sheet):
 
