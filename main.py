@@ -146,6 +146,27 @@ def main():
                             )
     
     st_profile_report(profile2)
+
+
+    titleLeads7ma= "Reporte de 7ma Leads Pandas Profiling"
+    st.markdown(f"## {titleLeads7ma}")
+    profile3 = ProfileReport(
+                            df_consolidado_7l, 
+                            title=titleLeads7ma, 
+                             html={"style": {"full_width": True}}
+                            )
+    
+    st_profile_report(profile3)
+
+    titleComp7ma= "Reporte de 7ma Compradores Pandas Profiling"
+    st.markdown(f"## {titleComp7ma}")
+    profile4 = ProfileReport(
+                            df_consolidado_7c, 
+                            title=titleComp7ma, 
+                             html={"style": {"full_width": True}}
+                            )
+    
+    st_profile_report(profile4)
     #--------------------------------------------
 
     #Para Generar Graficas de Variables de Dataset de Leads Consolidado-----
