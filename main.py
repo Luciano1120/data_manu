@@ -302,7 +302,7 @@ def main():
     title6= "Analisis Univariado de 7ma Gneracion Compradores"
     st.markdown(f"## {title6}")
     
-    col19, col20, col21 = st.columns(3) #defino los alias de 3 columnas y le paso como argumento la cantidad (3)
+    col19, col20, col21 = st.columns(3) 
     
     with col19:
 
