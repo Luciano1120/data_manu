@@ -19,7 +19,7 @@ def grafico_barras(df, variable):
     # Etiquetas y estilo
     plt.xlabel("Cantidad", fontsize=12)
     plt.ylabel(variable, fontsize=12)
-    plt.title(f"Distribución de {variable}", fontsize=14)
+    plt.title(f"Distribución de {variable} (Total: {total})", fontsize=14) #concateno en el titulo el total de la muestra
     plt.grid(axis="x", linestyle="--", alpha=0.7)
     plt.tight_layout()
     
@@ -41,6 +41,12 @@ def grafico_barras_sinInfo(df, variable):
     Pero quitando los valores sin Info 
     """
     dfFiltrado = df[df[variable] != "sin info"]  # Filtrar registros sin info
+
+    if dfFiltrado.empty:
+        st.warning(f"No hay datos para mostrar en {variable} después de filtrar 'sin info'.")
+        return
+
+
     dfAg = dfFiltrado[variable].value_counts().reset_index() #con reset_index lo convierto en dataframe
     dfAg.columns = [variable, "Cantidad"]  #renombro las columnas, col 1 : con el nombre de la Variable y la 2 con la Cantidad
     total = dfFiltrado[variable].count()
@@ -53,7 +59,7 @@ def grafico_barras_sinInfo(df, variable):
     # Etiquetas y estilo
     plt.xlabel("Cantidad", fontsize=12)
     plt.ylabel(variable, fontsize=12)
-    plt.title(f"Distribución de {variable}", fontsize=14)
+    plt.title(f"Distribución de {variable} (Total: {total})", fontsize=14)
     plt.grid(axis="x", linestyle="--", alpha=0.7)
     plt.tight_layout()
     
