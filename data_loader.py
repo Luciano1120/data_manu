@@ -1,4 +1,5 @@
 import pandas as pd
+import numpy as np
 from unidecode import unidecode
 from transformaciones.renombraCampos import renombrar_y_filtrar
 from cargaArchivos import carga_url_gDrive as cd , carga_url_oDrive as co
@@ -7,7 +8,7 @@ from transformaciones.renombraCampos import renombrar_y_filtrar
 from raw import datasetsEncuestas as de, datasetPreguntas as dp, datasetMapeos as dm
 from funciones import comproCursoAnterior 
 
-import streamlit as st
+
 
 
 def carga_datos():
@@ -77,6 +78,8 @@ def carga_datos():
         #df_consolidado=df_consolidado.dropna(axis=0)# Filas q tenga algun nulo dentro del registro será removida
 
         df_consolidado = df_consolidado.fillna("sin info")
+        df_consolidado['EdadProm'] = df_consolidado['EdadProm'].replace('sin info', np.nan)
+        df_consolidado['Ingresos Prom'] = df_consolidado['Ingresos Prom'].replace('sin info', np.nan)
 
         df_consolidado['comproCursoAnterior'] = df_consolidado['¿Has comprado algún otro curso de Emprendelandia?'].apply(comproCursoAnterior)
 
@@ -91,7 +94,8 @@ def carga_datos():
 
 
         df_consolidado=df_consolidado[campos_a_conservar]
-
+        
+        
 
         df_consolidado_Comp = df_consolidado[df_consolidado['TipoEncuesta'] == 'c'] #filtro solo compradores
         df_consolidado_Leads = df_consolidado[df_consolidado['TipoEncuesta'] == 'l'] #filtro solo leads

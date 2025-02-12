@@ -1,21 +1,5 @@
 import streamlit as st
-import pandas as pd
-from unidecode import unidecode
-from transformaciones.renombraCampos import renombrar_y_filtrar
-from cargaArchivos import carga_url_gDrive as cd , carga_url_oDrive as co
-from transformaciones.preguntas import filtroPreg 
-from transformaciones.renombraCampos import renombrar_y_filtrar
-from raw import datasetsEncuestas as de, datasetPreguntas as dp, datasetMapeos as dm
-from funciones import comproCursoAnterior 
-from graficos import grafico_barras as gb, grafico_barras_sinInfo as gbsi
-
-from ydata_profiling import ProfileReport
-from streamlit_pandas_profiling import st_profile_report
-from ydata_profiling.config import Settings
-import streamlit.components.v1 as components
-
 from data_loader import carga_datos 
-
 
 
 def main():  
