@@ -13,7 +13,7 @@ else:
         "7ma Compradores": st.session_state.df_consolidado_7c,
     }
 
-    variables = ["M_Pais", "Estudios", "Situacion Laboral M", "Conocimiento Importaciones","¿Cómo conociste a Valeria o a Emprendelandia?","Tiempo Disponible en el Dia","Tiempo dispuesto a Invertir Meses","Sosten Economico","Ingresos Prom","Ingreso_Calidad","EdadProm","RangoEtario","comproCursoAnterior"]
+    variables = ["M_Pais", "Estudios", "Situacion Laboral M", "Conocimiento Importaciones","¿Cómo conociste a Valeria o a Emprendelandia?","Tiempo Disponible en el Dia","Tiempo dispuesto a Invertir Meses","Sosten Economico","Ingresos Prom","Ingreso_Calidad","EdadProm","RangoEtario","comproCursoAnterior","Info Ingresos"]
 
     selected_variable = st.selectbox("Selecciona una Variable para analizar", variables)
 

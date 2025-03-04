@@ -62,7 +62,7 @@ def carga_datos():
         df_consolidado['Situacion Laboral'] = df_consolidado['Situacion Laboral'].astype(str)
         df_consolidado['Situacion Laboral'] = df_consolidado['Situacion Laboral'].str.strip().str.lower().apply(unidecode)
 
-
+        
 
         df_consolidado = df_consolidado.merge(T_pais, on='Pais', how='left')
         df_consolidado = df_consolidado.merge(T_Ingresos, on='Ingresos', how='left')
@@ -86,10 +86,17 @@ def carga_datos():
         df_consolidado['TipoEncuesta']=df_consolidado['Origen'].str[3] #agrego campo para identificar el Origen si es Lead o Comprador
 
 
+        df_consolidado['Info Ingresos'] = np.where(
+            (df_consolidado['Sosten Economico'] == "sin info") | (df_consolidado['Ingresos Prom'] == "sin info"),
+            "sin info",
+            df_consolidado['Sosten Economico'].astype(str) + " " + df_consolidado['Ingresos Prom'].astype(str)
+                )
+
+
         campos_a_conservar = [
         "Estudios", "Conocimiento Importaciones", "¿Cómo conociste a Valeria o a Emprendelandia?",
         "Tiempo Disponible en el Dia", "Tiempo dispuesto a Invertir Meses", "Sosten Economico",
-        "M_Pais", "Ingresos Prom", "Ingreso_Calidad", "EdadProm", "RangoEtario", "Situacion Laboral M","comproCursoAnterior","TipoEncuesta","Origen"
+        "M_Pais", "Ingresos Prom", "Ingreso_Calidad", "EdadProm", "RangoEtario", "Situacion Laboral M","comproCursoAnterior","TipoEncuesta","Origen","Info Ingresos"
         ]
 
 
